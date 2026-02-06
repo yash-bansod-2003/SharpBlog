@@ -16,4 +16,6 @@ public class Category
 
     [DataType(DataType.DateTime)]
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+    public ICollection<Post>? Posts { get; set; }
 }

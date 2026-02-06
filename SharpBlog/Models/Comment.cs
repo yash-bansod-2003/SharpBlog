@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SharpBlog.Models;
 
@@ -16,4 +17,9 @@ public class Comment
 
     [DataType(DataType.DateTime)]
     public DateTime CommentedAt { get; set; } = DateTime.UtcNow;
+
+    public required Post Post { get; set; }
+
+    [ForeignKey("Post")]
+    public int PostId { get; set; }
 }
